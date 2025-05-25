@@ -1,5 +1,6 @@
 package com.minthantoo.patient_service.service;
 
+import com.minthantoo.patient_service.dto.PatientRequestDTO;
 import com.minthantoo.patient_service.dto.PatientResponseDTO;
 import com.minthantoo.patient_service.mapper.PatientMapper;
 import com.minthantoo.patient_service.model.Patient;
@@ -21,6 +22,7 @@ public class PatientService {
 
 //        List<PatientResponseDTO> patientResponseDTOs = patients.stream()
 //                .map(patient -> PatientMapper.toDTO(patient)).toList();
+//        return patientResponseDTOs;
 
 //        List<PatientResponseDTO> patientResponseDTOs = patients.stream()
 //                .map(PatientMapper::toDTO).toList();
@@ -28,5 +30,11 @@ public class PatientService {
 
         return patients.stream()
                 .map(PatientMapper::toDTO).toList();
+    }
+
+    public PatientResponseDTO createPatient(PatientRequestDTO patientRequestDTO) {
+        Patient newPatient = patientRepository.save(PatientMapper.toModel(patientRequestDTO));
+
+        return PatientMapper.toDTO(newPatient);
     }
 }

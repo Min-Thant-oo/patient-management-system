@@ -4,6 +4,8 @@ import com.minthantoo.patient_service.dto.PatientRequestDTO;
 import com.minthantoo.patient_service.dto.PatientResponseDTO;
 import com.minthantoo.patient_service.exception.EmailAlreadyExistsException;
 import com.minthantoo.patient_service.exception.PatientNotFoundException;
+import com.minthantoo.patient_service.grpc.BillingServiceGrpcClient;
+import com.minthantoo.patient_service.kafka.kafkaProducer;
 import com.minthantoo.patient_service.mapper.PatientMapper;
 import com.minthantoo.patient_service.model.Patient;
 import com.minthantoo.patient_service.repository.PatientRepository;
@@ -16,9 +18,15 @@ import java.util.UUID;
 @Service
 public class PatientService {
     private final PatientRepository patientRepository;
+    private final BillingServiceGrpcClient billingServiceGrpcClient;
+    private final kafkaProducer kafkaProducer;
 
-    private PatientService(PatientRepository patientRepository) {
+    private PatientService(PatientRepository patientRepository,
+                           BillingServiceGrpcClient billingServiceGrpcClient,
+                           kafkaProducer kafkaProducer) {
         this.patientRepository = patientRepository;
+        this.billingServiceGrpcClient = billingServiceGrpcClient;
+        this.kafkaProducer = kafkaProducer;
     }
 
     public List<PatientResponseDTO> getPatients() {
@@ -43,6 +51,11 @@ public class PatientService {
 
         Patient newPatient = patientRepository.save(PatientMapper.toModel(patientRequestDTO));
 
+        // calling billing-service grpc client to create account for them
+        billingServiceGrpcClient.createBillingAccount(newPatient.getId().toString(), newPatient.getName(), newPatient.getEmail());
+
+        // calling kafka
+        kafkaProducer.sendEvent(newPatient);
         return PatientMapper.toDTO(newPatient);
     }
 

@@ -1,0 +1,30 @@
+server:
+  port: 4004
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        ## Client makes request to API Gateway: http://localhost:4004/api/patients
+        ## Gateway matches the predicate /api/patients/**.
+        ## Gateway applies filter strip-prefix=1 ? becomes /patients.
+        ## Gateway forwards request to Patient Service: http://patient-service:4000/patients.
+        - id: patient-service-route
+          uri: http://patient-service:4000   #destination
+          predicates:
+            - path=/api/patients/**
+          filters:
+            - strip-prefix=1
+
+
+        ## Client calls: http://localhost:4004/api-docs/patients
+        ## Gateway matches predicate /api-docs/patients.
+        ## Gateway rewrites path: /api-docs/patients ? /v3/api-docs
+        ## Gateway forwards to Patient Service: http://patient-service:4000/v3/api-docs
+        - id: api-doc-patient-route
+          uri: http://patient-service:4000
+          predicates:
+            - path=/api-docs/patients
+          filters:
+            - rewrite-path=/api-docs/patients,/v3/api-docs
+

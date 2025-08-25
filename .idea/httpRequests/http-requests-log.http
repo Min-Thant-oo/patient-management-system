@@ -1,3 +1,35 @@
+GET http://localhost:4005/validate
+Authorization: Bearer 12345678765432
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+###
+
+GET http://localhost:4005/validate
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NjA4MTYwMCwiZXhwIjoxNzU2MTE3NjAwfQ.q8cgy3-URmwFoyP0e1EZ81l_NJ9kZeQFpUJdX9AX9KI
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+###
+
+POST http://localhost:4005/login
+Content-Type: application/json
+Content-Length: 63
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "testuser@test.com",
+  "password": "password123"
+}
+
+<> 2025-08-24T192640.200.json
+
+###
+
 POST http://localhost:4005/login
 Content-Type: application/json
 Content-Length: 63

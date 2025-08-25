@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="added authservice &amp; its dto">
-      <change afterPath="$PROJECT_DIR$/api-requests/auth-service/login.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/service/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/util/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="added jwt &amp; token generation &amp; test login endpoint">
+      <change afterPath="$PROJECT_DIR$/api-requests/auth-service/validate.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/test/java/com/minthantoo/authservice/AuthServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-requests/auth-service/login.http" beforeDir="false" afterPath="$PROJECT_DIR$/api-requests/auth-service/login.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/util/JwtUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -599,7 +595,7 @@
       <workItem from="1755399155043" duration="144000" />
       <workItem from="1755402375293" duration="20754000" />
       <workItem from="1755826615405" duration="21418000" />
-      <workItem from="1756060876853" duration="2250000" />
+      <workItem from="1756060876853" duration="5904000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -641,7 +637,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755994735520</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added jwt &amp; token generation &amp; test login endpoint">
+      <option name="closed" value="true" />
+      <created>1756070740993</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1756070740993</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -653,7 +657,8 @@
     <MESSAGE value="added api-gateway service" />
     <MESSAGE value="added api-gateway docker file &amp; fixed application.yml" />
     <MESSAGE value="added authservice &amp; its dto" />
-    <option name="LAST_COMMIT_MESSAGE" value="added authservice &amp; its dto" />
+    <MESSAGE value="added jwt &amp; token generation &amp; test login endpoint" />
+    <option name="LAST_COMMIT_MESSAGE" value="added jwt &amp; token generation &amp; test login endpoint" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

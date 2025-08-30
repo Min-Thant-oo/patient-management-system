@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="added jwt &amp; token generation &amp; test login endpoint">
-      <change afterPath="$PROJECT_DIR$/api-requests/auth-service/validate.http" afterDir="false" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="added validate token test &amp; validate token endpoint">
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/minthantoo/apigateway/exception/JwtValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/minthantoo/apigateway/filter/JwtValidationGatewayFilterFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/test/java/com/minthantoo/apigateway/ApiGatewayApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/api-requests/auth-service/login.http" beforeDir="false" afterPath="$PROJECT_DIR$/api-requests/auth-service/login.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/util/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/minthantoo/authservice/util/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-requests/auth-service/validate.http" beforeDir="false" afterPath="$PROJECT_DIR$/api-requests/auth-service/validate.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-requests/get-patient.http" beforeDir="false" afterPath="$PROJECT_DIR$/api-requests/get-patient.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +42,8 @@
       <list>
         <option value="Dockerfile" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTTP Request" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -90,6 +93,7 @@
     "HTTP Request.create-patient | Creates a new patient entity.executor": "Run",
     "HTTP Request.get-patient | GET request to get all patients.executor": "Run",
     "HTTP Request.login | Login Request to retrieve a token.executor": "Run",
+    "HTTP Request.validate | GET request to validate token.executor": "Run",
     "Maven.analytics-service [clean].executor": "Run",
     "Maven.analytics-service [compile].executor": "Run",
     "Maven.auth-service [clean].executor": "Run",
@@ -149,7 +153,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.auth-service">
+  <component name="RunManager" selected="Docker.api-gateway">
     <configuration name="create-billing-account | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/grpc-requests/billing-service/create-billing-account.http" executionIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -160,6 +164,9 @@
       <method v="2" />
     </configuration>
     <configuration name="login | Login Request to retrieve a token" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/auth-service/login.http" executionIdentifier="Login Request to retrieve a token" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="validate | GET request to validate token" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/auth-service/validate.http" executionIdentifier="GET request to validate token" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
@@ -261,6 +268,14 @@
         <settings>
           <option name="imageTag" value="api-gateway:latest" />
           <option name="containerName" value="api-gateway" />
+          <option name="envVars">
+            <list>
+              <DockerEnvVarImpl>
+                <option name="name" value="AUTH_SERVICE_URL" />
+                <option name="value" value="http://auth-service:4005" />
+              </DockerEnvVarImpl>
+            </list>
+          </option>
           <option name="portBindings">
             <list>
               <DockerPortBindingImpl>
@@ -348,14 +363,6 @@
                 <option name="name" value="SPRING_SQL_INIT_MODE" />
                 <option name="value" value="always" />
               </DockerEnvVarImpl>
-            </list>
-          </option>
-          <option name="portBindings">
-            <list>
-              <DockerPortBindingImpl>
-                <option name="containerPort" value="4005" />
-                <option name="hostPort" value="4005" />
-              </DockerPortBindingImpl>
             </list>
           </option>
           <option name="commandLineOptions" value="--network internal" />
@@ -540,6 +547,7 @@
       <item itemvalue="Docker.auth-service-db " />
       <item itemvalue="Docker.auth-service" />
       <item itemvalue="HTTP Request.login | Login Request to retrieve a token" />
+      <item itemvalue="HTTP Request.validate | GET request to validate token" />
       <item itemvalue="HTTP Request.get-patient | GET request to get all patients" />
       <item itemvalue="HTTP Request.create-patient | Creates a new patient entity" />
       <item itemvalue="HTTP Request.create-billing-account | #1" />
@@ -553,11 +561,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.login | Login Request to retrieve a token" />
         <item itemvalue="HTTP Request.get-patient | GET request to get all patients" />
+        <item itemvalue="HTTP Request.login | Login Request to retrieve a token" />
+        <item itemvalue="HTTP Request.validate | GET request to validate token" />
         <item itemvalue="HTTP Request.create-patient | Creates a new patient entity" />
         <item itemvalue="HTTP Request.create-billing-account | #1" />
-        <item itemvalue="Docker.patient-service-db" />
       </list>
     </recent_temporary>
   </component>
@@ -595,7 +603,7 @@
       <workItem from="1755399155043" duration="144000" />
       <workItem from="1755402375293" duration="20754000" />
       <workItem from="1755826615405" duration="21418000" />
-      <workItem from="1756060876853" duration="5904000" />
+      <workItem from="1756060876853" duration="22318000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -645,7 +653,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756070740993</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added validate token test &amp; validate token endpoint">
+      <option name="closed" value="true" />
+      <created>1756081746321</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1756081746321</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -658,7 +674,8 @@
     <MESSAGE value="added api-gateway docker file &amp; fixed application.yml" />
     <MESSAGE value="added authservice &amp; its dto" />
     <MESSAGE value="added jwt &amp; token generation &amp; test login endpoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="added jwt &amp; token generation &amp; test login endpoint" />
+    <MESSAGE value="added validate token test &amp; validate token endpoint" />
+    <option name="LAST_COMMIT_MESSAGE" value="added validate token test &amp; validate token endpoint" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

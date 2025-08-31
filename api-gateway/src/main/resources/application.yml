@@ -33,9 +33,16 @@ spring:
         ## Gateway rewrites path: /api-docs/patients ? /v3/api-docs
         ## Gateway forwards to Patient Service: http://patient-service:4000/v3/api-docs
         - id: api-doc-patient-route
-          uri: http://patient-service:4000
+          uri: http://patient-service:4000   #destination
           predicates:
             - Path=/api-docs/patients
           filters:
             - RewritePath=/api-docs/patients,/v3/api-docs
 
+
+        - id: api-docs-auth-route
+          uri: http://auth-service:4005   #destination
+          predicates:
+            - Path=/api-docs/auth
+          filters:
+            - RewritePath=/api-docs/auth,/v3/api-docs

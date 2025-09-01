@@ -1,5 +1,6 @@
 package com.minthantoo.patient_service.controller;
 
+import com.minthantoo.patient_service.dto.PagedPatientResponseDTO;
 import com.minthantoo.patient_service.dto.PatientRequestDTO;
 import com.minthantoo.patient_service.dto.PatientResponseDTO;
 import com.minthantoo.patient_service.dto.validators.CreatePatientValidationGroup;
@@ -31,14 +32,14 @@ public class PatientController {
     @GetMapping
     @Operation(summary = "Get Patients")
     //  return a ResponseEntity type with a list of PatientResponseDTO
-    public ResponseEntity<List<PatientResponseDTO>> getPatients(
+    public ResponseEntity<PagedPatientResponseDTO> getPatients(
             @RequestParam(defaultValue = "1") int page,
             @RequestParam(defaultValue = "10") int size,
             @RequestParam(defaultValue = "asc") String sort,
             @RequestParam(defaultValue = "name") String sortField,
             @RequestParam(defaultValue = "") String searchValue
     ) {
-        List<PatientResponseDTO> patients = patientService.getPatients();
+        PagedPatientResponseDTO patients = patientService.getPatients();
         return ResponseEntity.ok().body(patients);
     }
 

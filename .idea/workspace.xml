@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="added auth service docs via gateway">
-      <change afterPath="$PROJECT_DIR$/integration-tests/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-tests/src/test/java/AuthIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="added login integration test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-tests/src/test/java/AuthIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-tests/src/test/java/AuthIntegrationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -608,7 +603,7 @@
       <workItem from="1755399155043" duration="144000" />
       <workItem from="1755402375293" duration="20754000" />
       <workItem from="1755826615405" duration="21418000" />
-      <workItem from="1756060876853" duration="33011000" />
+      <workItem from="1756060876853" duration="37300000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -674,7 +669,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756567559079</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added login integration test">
+      <option name="closed" value="true" />
+      <created>1756671031409</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1756671031409</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -689,7 +692,8 @@
     <MESSAGE value="added jwt &amp; token generation &amp; test login endpoint" />
     <MESSAGE value="added validate token test &amp; validate token endpoint" />
     <MESSAGE value="added auth service docs via gateway" />
-    <option name="LAST_COMMIT_MESSAGE" value="added auth service docs via gateway" />
+    <MESSAGE value="added login integration test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added login integration test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

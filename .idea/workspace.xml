@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="added login integration test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-tests/src/test/java/AuthIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-tests/src/test/java/AuthIntegrationTest.java" afterDir="false" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="added login integration test unauth test">
+      <change afterPath="$PROJECT_DIR$/integration-tests/src/test/java/PatientIntegrationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +87,7 @@
     "HTTP Request.login | Login Request to retrieve a token.executor": "Run",
     "HTTP Request.validate | GET request to validate token.executor": "Run",
     "JUnit.AuthIntegrationTest.executor": "Run",
+    "JUnit.PatientIntegrationTest.executor": "Run",
     "Maven.analytics-service [clean].executor": "Run",
     "Maven.analytics-service [compile].executor": "Run",
     "Maven.auth-service [clean].executor": "Run",
@@ -147,24 +147,42 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AuthIntegrationTest">
-    <configuration name="create-patient | Creates a new patient entity" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/create-patient.http" executionIdentifier="Creates a new patient entity" runType="Run single request">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="JUnit.All in integration-tests">
     <configuration name="get-patient | GET request to get all patients" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/get-patient.http" executionIdentifier="GET request to get all patients" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="login | Login Request to retrieve a token" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/auth-service/login.http" executionIdentifier="Login Request to retrieve a token" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="validate | GET request to validate token" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/auth-service/validate.http" executionIdentifier="GET request to validate token" runType="Run single request">
-      <method v="2" />
+    <configuration name="All in integration-tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="integration-tests" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="AuthIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="integration-tests" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AuthIntegrationTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PatientIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="integration-tests" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PatientIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PatientIntegrationTest.shouldReturnPatientsWithValidToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="integration-tests" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PatientIntegrationTest" />
+      <option name="METHOD_NAME" value="shouldReturnPatientsWithValidToken" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -546,11 +564,11 @@
       <item itemvalue="Docker.patient-service-db" />
       <item itemvalue="Docker.auth-service-db " />
       <item itemvalue="Docker.auth-service" />
-      <item itemvalue="HTTP Request.login | Login Request to retrieve a token" />
-      <item itemvalue="HTTP Request.validate | GET request to validate token" />
       <item itemvalue="HTTP Request.get-patient | GET request to get all patients" />
-      <item itemvalue="HTTP Request.create-patient | Creates a new patient entity" />
+      <item itemvalue="JUnit.All in integration-tests" />
       <item itemvalue="JUnit.AuthIntegrationTest" />
+      <item itemvalue="JUnit.PatientIntegrationTest" />
+      <item itemvalue="JUnit.PatientIntegrationTest.shouldReturnPatientsWithValidToken" />
       <item itemvalue="Spring Boot.AuthServiceApplication" />
       <item itemvalue="Spring Boot.ApiGatewayApplication" />
       <item itemvalue="Spring Boot.AnalyticsServiceApplication" />
@@ -561,11 +579,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in integration-tests" />
+        <item itemvalue="JUnit.PatientIntegrationTest.shouldReturnPatientsWithValidToken" />
+        <item itemvalue="JUnit.PatientIntegrationTest" />
         <item itemvalue="JUnit.AuthIntegrationTest" />
         <item itemvalue="HTTP Request.get-patient | GET request to get all patients" />
-        <item itemvalue="HTTP Request.login | Login Request to retrieve a token" />
-        <item itemvalue="HTTP Request.validate | GET request to validate token" />
-        <item itemvalue="HTTP Request.create-patient | Creates a new patient entity" />
       </list>
     </recent_temporary>
   </component>
@@ -603,7 +621,7 @@
       <workItem from="1755399155043" duration="144000" />
       <workItem from="1755402375293" duration="20754000" />
       <workItem from="1755826615405" duration="21418000" />
-      <workItem from="1756060876853" duration="37300000" />
+      <workItem from="1756060876853" duration="38155000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -677,7 +695,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756671031409</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added login integration test unauth test">
+      <option name="closed" value="true" />
+      <created>1756743231288</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1756743231288</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -693,7 +719,8 @@
     <MESSAGE value="added validate token test &amp; validate token endpoint" />
     <MESSAGE value="added auth service docs via gateway" />
     <MESSAGE value="added login integration test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added login integration test" />
+    <MESSAGE value="added login integration test unauth test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added login integration test unauth test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -27,10 +27,17 @@ public class PatientController {
         this.patientService = patientService;
     }
 
+    // Pagination -> http://localhost:4004/api/patients?page=1&size=10
     @GetMapping
     @Operation(summary = "Get Patients")
-//  return a ResponseEntity type with a list of PatientResponseDTO
-    public ResponseEntity<List<PatientResponseDTO>> getPatients() {
+    //  return a ResponseEntity type with a list of PatientResponseDTO
+    public ResponseEntity<List<PatientResponseDTO>> getPatients(
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "asc") String sort,
+            @RequestParam(defaultValue = "name") String sortField,
+            @RequestParam(defaultValue = "") String searchValue
+    ) {
         List<PatientResponseDTO> patients = patientService.getPatients();
         return ResponseEntity.ok().body(patients);
     }

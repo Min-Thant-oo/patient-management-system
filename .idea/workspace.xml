@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="added login integration test unauth test">
-      <change afterPath="$PROJECT_DIR$/integration-tests/src/test/java/PatientIntegrationTest.java" afterDir="false" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="added get-patient-integration-test_1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,8 +86,10 @@
     "HTTP Request.get-patient | GET request to get all patients.executor": "Run",
     "HTTP Request.login | Login Request to retrieve a token.executor": "Run",
     "HTTP Request.validate | GET request to validate token.executor": "Run",
+    "JUnit.All in integration-tests.executor": "Run",
     "JUnit.AuthIntegrationTest.executor": "Run",
     "JUnit.PatientIntegrationTest.executor": "Run",
+    "JUnit.PatientIntegrationTest.shouldReturnPatientsWithValidToken.executor": "Run",
     "Maven.analytics-service [clean].executor": "Run",
     "Maven.analytics-service [compile].executor": "Run",
     "Maven.auth-service [clean].executor": "Run",
@@ -621,7 +623,7 @@
       <workItem from="1755399155043" duration="144000" />
       <workItem from="1755402375293" duration="20754000" />
       <workItem from="1755826615405" duration="21418000" />
-      <workItem from="1756060876853" duration="38155000" />
+      <workItem from="1756060876853" duration="41426000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -703,7 +705,23 @@
       <option name="project" value="LOCAL" />
       <updated>1756743231288</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added get-patient-integration-test">
+      <option name="closed" value="true" />
+      <created>1756744154942</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1756744154942</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added get-patient-integration-test_1">
+      <option name="closed" value="true" />
+      <created>1756744169405</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1756744169405</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -720,7 +738,9 @@
     <MESSAGE value="added auth service docs via gateway" />
     <MESSAGE value="added login integration test" />
     <MESSAGE value="added login integration test unauth test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added login integration test unauth test" />
+    <MESSAGE value="added get-patient-integration-test" />
+    <MESSAGE value="added get-patient-integration-test_1" />
+    <option name="LAST_COMMIT_MESSAGE" value="added get-patient-integration-test_1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

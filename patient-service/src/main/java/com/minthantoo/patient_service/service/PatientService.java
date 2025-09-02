@@ -40,7 +40,10 @@ public class PatientService {
     // Finally, we put those DTOs back together with the pagination info into our own response object (PagedPatientResponseDTO) and return it.
     public PagedPatientResponseDTO getPatients(int page, int size, String sort, String sortField, String searchValue) {
 
-        Pageable pageable = PageRequest.of(page, size,
+        // zero-based, so page 0 = first page
+        // request -> page = 1
+        // pageable -> page = 0
+        Pageable pageable = PageRequest.of(page -1, size,
                 sort.equalsIgnoreCase("desc") // "asc" or "desc"
                         ? Sort.by(sortField).descending()
                         : Sort.by(sortField).ascending());
@@ -61,7 +64,7 @@ public class PatientService {
         return new PagedPatientResponseDTO(
                 patientResponseDtos,
                 // these methods are from Spring Data’s Page interface.
-                patientPage.getNumber(),  // the current page number (zero-based, so page 0 = first page)
+                patientPage.getNumber() +1,  // the current page number (zero-based, so page 0 = first page, +1 so that the client won't get confused)
                 patientPage.getSize(), // he size of the page (how many records per page)
                 patientPage.getTotalPages(), // the total number of pages available
                 (int)patientPage.getTotalElements() // the total number of records across all pages

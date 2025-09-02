@@ -39,7 +39,7 @@ public class PatientController {
             @RequestParam(defaultValue = "name") String sortField,
             @RequestParam(defaultValue = "") String searchValue
     ) {
-        PagedPatientResponseDTO patients = patientService.getPatients();
+        PagedPatientResponseDTO patients = patientService.getPatients(page, size, sort, sortField, searchValue);
         return ResponseEntity.ok().body(patients);
     }
 

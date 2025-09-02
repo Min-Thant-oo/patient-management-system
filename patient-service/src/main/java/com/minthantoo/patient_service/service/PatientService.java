@@ -1,5 +1,6 @@
 package com.minthantoo.patient_service.service;
 
+import com.minthantoo.patient_service.dto.PagedPatientResponseDTO;
 import com.minthantoo.patient_service.dto.PatientRequestDTO;
 import com.minthantoo.patient_service.dto.PatientResponseDTO;
 import com.minthantoo.patient_service.exception.EmailAlreadyExistsException;
@@ -9,6 +10,10 @@ import com.minthantoo.patient_service.kafka.kafkaProducer;
 import com.minthantoo.patient_service.mapper.PatientMapper;
 import com.minthantoo.patient_service.model.Patient;
 import com.minthantoo.patient_service.repository.PatientRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -29,19 +34,38 @@ public class PatientService {
         this.kafkaProducer = kafkaProducer;
     }
 
-    public List<PatientResponseDTO> getPatients() {
-        List<Patient> patients = patientRepository.findAll();
+    // The flow is we get the patients from database.
+    // Got a patientPage object _ this has patients + pagination info.
+    // we take just the patients out of that patientPage object and turn them into DTOs meaning without pagination info(not to expose entities)
+    // Finally, we put those DTOs back together with the pagination info into our own response object (PagedPatientResponseDTO) and return it.
+    public PagedPatientResponseDTO getPatients(int page, int size, String sort, String sortField, String searchValue) {
 
-//        List<PatientResponseDTO> patientResponseDTOs = patients.stream()
-//                .map(patient -> PatientMapper.toDTO(patient)).toList();
-//        return patientResponseDTOs;
+        Pageable pageable = PageRequest.of(page, size,
+                sort.equalsIgnoreCase("desc") // "asc" or "desc"
+                        ? Sort.by(sortField).descending()
+                        : Sort.by(sortField).ascending());
 
-//        List<PatientResponseDTO> patientResponseDTOs = patients.stream()
-//                .map(PatientMapper::toDTO).toList();
-//        return patientResponseDTOs;
+        Page<Patient> patientPage;
 
-        return patients.stream()
-                .map(PatientMapper::toDTO).toList();
+        // Got a patientPage object _ this has patients + pagination info.
+        if(searchValue == null || searchValue.isBlank()) {
+            patientPage = patientRepository.findAll(pageable);
+        } else {
+            patientPage = patientRepository.findByNameContainingIgnoreCase(searchValue, pageable);
+        }
+
+        // take just the patients content out of that patientPage object and turn them into DTOs
+        // getContent() -> the list of the actual objects for the current page
+        List<PatientResponseDTO> patientResponseDtos = patientPage.getContent().stream().map(PatientMapper::toDTO).toList();
+
+        return new PagedPatientResponseDTO(
+                patientResponseDtos,
+                // these methods are from Spring Data’s Page interface.
+                patientPage.getNumber(),  // the current page number (zero-based, so page 0 = first page)
+                patientPage.getSize(), // he size of the page (how many records per page)
+                patientPage.getTotalPages(), // the total number of pages available
+                (int)patientPage.getTotalElements() // the total number of records across all pages
+        );
     }
 
     public PatientResponseDTO createPatient(PatientRequestDTO patientRequestDTO) {

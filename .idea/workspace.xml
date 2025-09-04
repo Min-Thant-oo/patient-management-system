@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added redis dependencies &amp; cachemanager">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/service/PatientService.java" afterDir="false" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added redis to PatientService &amp; tested">
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/minthantoo/apigateway/config/RateLimiterConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -651,7 +651,7 @@
       <workItem from="1755399155043" duration="144000" />
       <workItem from="1755402375293" duration="20754000" />
       <workItem from="1755826615405" duration="21418000" />
-      <workItem from="1756060876853" duration="63512000" />
+      <workItem from="1756060876853" duration="65047000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -797,7 +797,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756949466566</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added redis to PatientService &amp; tested">
+      <option name="closed" value="true" />
+      <created>1756952066685</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1756952066685</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -822,7 +830,8 @@
     <MESSAGE value="fixed pagination zero index" />
     <MESSAGE value="Added pagination api testing" />
     <MESSAGE value="Added redis dependencies &amp; cachemanager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added redis dependencies &amp; cachemanager" />
+    <MESSAGE value="Added redis to PatientService &amp; tested" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added redis to PatientService &amp; tested" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

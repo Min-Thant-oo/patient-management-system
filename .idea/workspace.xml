@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="fixed pagination zero index" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added pagination api testing">
+      <change afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/cache/RedisCacheConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,6 +85,7 @@
     "Docker.kafka.executor": "Run",
     "Docker.patient-service-db.executor": "Run",
     "Docker.patient-service.executor": "Run",
+    "Docker.redis.executor": "Run",
     "HTTP Request.create-billing-account | #1.executor": "Run",
     "HTTP Request.create-patient | Creates a new patient entity.executor": "Run",
     "HTTP Request.get-patient | GET request to get all patients.executor": "Run",
@@ -121,6 +128,7 @@
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
+      "redis",
       "postgresql"
     ]
   }
@@ -147,23 +155,17 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in integration-tests">
+  <component name="RunManager" selected="Docker.redis">
     <configuration name="get-patient | GET request to get all patients" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/get-patient.http" executionIdentifier="GET request to get all patients" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="login | Login Request to retrieve a token" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/auth-service/login.http" executionIdentifier="Login Request to retrieve a token" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="All in integration-tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="integration-tests" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="integration-tests" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AuthIntegrationTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -555,7 +557,26 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="redis" type="docker-deploy" factoryName="docker-image" server-name="Docker">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="redis:latest" />
+          <option name="containerName" value="redis" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="6379" />
+                <option name="hostPort" value="6379" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="commandLineOptions" value="--network internal" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Docker.redis" />
       <item itemvalue="Docker.billing-service" />
       <item itemvalue="Docker.patient-service" />
       <item itemvalue="Docker.analytics-service" />
@@ -564,9 +585,9 @@
       <item itemvalue="Docker.patient-service-db" />
       <item itemvalue="Docker.auth-service-db " />
       <item itemvalue="Docker.auth-service" />
+      <item itemvalue="HTTP Request.login | Login Request to retrieve a token" />
       <item itemvalue="HTTP Request.get-patient | GET request to get all patients" />
       <item itemvalue="JUnit.All in integration-tests" />
-      <item itemvalue="JUnit.AuthIntegrationTest" />
       <item itemvalue="JUnit.PatientIntegrationTest" />
       <item itemvalue="JUnit.PatientIntegrationTest.shouldReturnPatientsWithValidToken" />
       <item itemvalue="Spring Boot.AuthServiceApplication" />
@@ -579,11 +600,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.get-patient | GET request to get all patients" />
+        <item itemvalue="HTTP Request.login | Login Request to retrieve a token" />
         <item itemvalue="JUnit.All in integration-tests" />
         <item itemvalue="JUnit.PatientIntegrationTest.shouldReturnPatientsWithValidToken" />
         <item itemvalue="JUnit.PatientIntegrationTest" />
-        <item itemvalue="JUnit.AuthIntegrationTest" />
-        <item itemvalue="HTTP Request.get-patient | GET request to get all patients" />
       </list>
     </recent_temporary>
   </component>
@@ -621,7 +642,7 @@
       <workItem from="1755399155043" duration="144000" />
       <workItem from="1755402375293" duration="20754000" />
       <workItem from="1755826615405" duration="21418000" />
-      <workItem from="1756060876853" duration="54919000" />
+      <workItem from="1756060876853" duration="61265000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -751,7 +772,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756781974098</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added pagination api testing">
+      <option name="closed" value="true" />
+      <created>1756869144660</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1756869144660</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -774,7 +803,8 @@
     <MESSAGE value="added PagedPatientResponseDTO" />
     <MESSAGE value="added pagination sorting logic response" />
     <MESSAGE value="fixed pagination zero index" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed pagination zero index" />
+    <MESSAGE value="Added pagination api testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added pagination api testing" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

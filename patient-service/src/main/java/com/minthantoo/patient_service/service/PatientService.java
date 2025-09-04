@@ -10,6 +10,9 @@ import com.minthantoo.patient_service.kafka.kafkaProducer;
 import com.minthantoo.patient_service.mapper.PatientMapper;
 import com.minthantoo.patient_service.model.Patient;
 import com.minthantoo.patient_service.repository.PatientRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -22,11 +25,12 @@ import java.util.UUID;
 
 @Service
 public class PatientService {
+    private static final Logger log = LoggerFactory.getLogger(PatientService.class);
     private final PatientRepository patientRepository;
     private final BillingServiceGrpcClient billingServiceGrpcClient;
     private final kafkaProducer kafkaProducer;
 
-    private PatientService(PatientRepository patientRepository,
+    public PatientService(PatientRepository patientRepository,
                            BillingServiceGrpcClient billingServiceGrpcClient,
                            kafkaProducer kafkaProducer) {
         this.patientRepository = patientRepository;
@@ -38,8 +42,19 @@ public class PatientService {
     // Got a patientPage object _ this has patients + pagination info.
     // we take just the patients out of that patientPage object and turn them into DTOs meaning without pagination info(not to expose entities)
     // Finally, we put those DTOs back together with the pagination info into our own response object (PagedPatientResponseDTO) and return it.
+    @Cacheable(
+            value = "patients",
+            key = "#page + '-' + #size + '-' + #sort + '-' + #sortField",
+            condition = "#searchValue == ''" // only cache response when searchValue is empty string
+    )
     public PagedPatientResponseDTO getPatients(int page, int size, String sort, String sortField, String searchValue) {
+        log.info("[REDIS]: Cache miss - fetching from DB");
 
+        try {
+            Thread.sleep(2000);
+        }  catch (InterruptedException e) {
+            log.error(e.getMessage());
+        }
         // zero-based, so page 0 = first page
         // request -> page = 1
         // pageable -> page = 0

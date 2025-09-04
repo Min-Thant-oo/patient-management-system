@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added pagination api testing">
-      <change afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/cache/RedisCacheConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added redis dependencies &amp; cachemanager">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/service/PatientService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +152,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.redis">
+  <component name="RunManager" selected="Docker.patient-service">
     <configuration name="get-patient | GET request to get all patients" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/get-patient.http" executionIdentifier="GET request to get all patients" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -526,6 +523,18 @@
                 <option name="value" value="9001" />
               </DockerEnvVarImpl>
               <DockerEnvVarImpl>
+                <option name="name" value="SPRING_CACHE_TYPE" />
+                <option name="value" value="redis" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="SPRING_DATA_REDIS_HOST" />
+                <option name="value" value="redis" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="SPRING_DATA_REDIS_PORT" />
+                <option name="value" value="6379" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
                 <option name="name" value="SPRING_DATASOURCE_PASSWORD" />
                 <option name="value" value="password" />
               </DockerEnvVarImpl>
@@ -542,12 +551,12 @@
                 <option name="value" value="update" />
               </DockerEnvVarImpl>
               <DockerEnvVarImpl>
-                <option name="name" value="SPRING_SQL_INIT_MODE" />
-                <option name="value" value="always " />
-              </DockerEnvVarImpl>
-              <DockerEnvVarImpl>
                 <option name="name" value="SPRING_KAFKA_BOOTSTRAP_SERVERS" />
                 <option name="value" value="kafka:9092" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="SPRING_SQL_INIT_MODE" />
+                <option name="value" value="always " />
               </DockerEnvVarImpl>
             </list>
           </option>
@@ -642,7 +651,7 @@
       <workItem from="1755399155043" duration="144000" />
       <workItem from="1755402375293" duration="20754000" />
       <workItem from="1755826615405" duration="21418000" />
-      <workItem from="1756060876853" duration="61265000" />
+      <workItem from="1756060876853" duration="63512000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -780,7 +789,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756869144660</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added redis dependencies &amp; cachemanager">
+      <option name="closed" value="true" />
+      <created>1756949466566</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1756949466566</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -804,7 +821,8 @@
     <MESSAGE value="added pagination sorting logic response" />
     <MESSAGE value="fixed pagination zero index" />
     <MESSAGE value="Added pagination api testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added pagination api testing" />
+    <MESSAGE value="Added redis dependencies &amp; cachemanager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added redis dependencies &amp; cachemanager" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

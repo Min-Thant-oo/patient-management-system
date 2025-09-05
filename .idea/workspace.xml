@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added rate limiting to api gateway">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/31d666f3-734b-4ee1-aaa8-35de7451c173.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/31d666f3-734b-4ee1-aaa8-35de7451c173.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Removed default-filters in application.yml in api-gateway &amp; added rate limiting test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/minthantoo/apigateway/config/RateLimiterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/minthantoo/apigateway/config/RateLimiterConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-tests/src/test/java/PatientIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-tests/src/test/java/PatientIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-tests/target/test-classes/PatientIntegrationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/integration-tests/target/test-classes/PatientIntegrationTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/grpc/BillingServiceGrpcClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/grpc/BillingServiceGrpcClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -664,7 +659,7 @@
       <workItem from="1755402375293" duration="20754000" />
       <workItem from="1755826615405" duration="21418000" />
       <workItem from="1756060876853" duration="73460000" />
-      <workItem from="1757037910092" duration="3452000" />
+      <workItem from="1757037910092" duration="5699000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -826,7 +821,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756954067459</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Removed default-filters in application.yml in api-gateway &amp; added rate limiting test">
+      <option name="closed" value="true" />
+      <created>1757041485670</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1757041485670</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -853,7 +856,8 @@
     <MESSAGE value="Added redis dependencies &amp; cachemanager" />
     <MESSAGE value="Added redis to PatientService &amp; tested" />
     <MESSAGE value="Added rate limiting to api gateway" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added rate limiting to api gateway" />
+    <MESSAGE value="Removed default-filters in application.yml in api-gateway &amp; added rate limiting test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed default-filters in application.yml in api-gateway &amp; added rate limiting test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -3,6 +3,8 @@ package com.minthantoo.patient_service.grpc;
 import billing.BillingRequest;
 import billing.BillingResponse;
 import billing.BillingServiceGrpc;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.slf4j.Logger;
@@ -15,6 +17,7 @@ public class BillingServiceGrpcClient {
     private static final Logger log = LoggerFactory.getLogger(BillingServiceGrpcClient.class);
     private final BillingServiceGrpc.BillingServiceBlockingStub blockingStub;
 
+    // constructor
     public BillingServiceGrpcClient(
             @Value("${billing.service.address:localhost}") String serverAddress,
             @Value("${billing.service.grpc.port:9001}") int serverPort
@@ -29,6 +32,9 @@ public class BillingServiceGrpcClient {
         blockingStub = BillingServiceGrpc.newBlockingStub(channel);
     }
 
+    // use circuit breaker in case billing-service fails
+    @CircuitBreaker(name = "billingService", fallbackMethod = "billingFallback")
+    @Retry(name = "billingRetry") // @Retry will retry 3 times  before circuit breaker kicks in
     public BillingResponse createBillingAccount(String patientId, String name, String email) {
         BillingRequest request = BillingRequest.newBuilder().setPatientId(patientId).setName(name).setEmail(email).build();
 

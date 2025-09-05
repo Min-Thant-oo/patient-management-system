@@ -6,18 +6,18 @@ spring:
     redis:
       ## use REDIS_HOST environment variable or use fallback 'redis'
       host: ${REDIS_HOST:redis}
-      port: ${REDIS_PORT;6379}
+      port: ${REDIS_PORT:6379}
   cloud:
     gateway:
-      default-filters:
-        - name: RequestRateLimiter
-          args:
-            ## maximum number of requests allowed at once per second per IP address
-            redis-rate-limiter.burstCapacity: 5
-            ## how many requests are allowed to be added per second
-            redis-rate-limiter.replenishRate: 5
-            ## from RateLimiterConfig
-            key-solver: "#{@ipKeyResolver}"
+#      default-filters:
+#        - name: RequestRateLimiter
+#          args:
+#            ## maximum number of requests allowed at once per second per IP address
+#            redis-rate-limiter.burstCapacity: 5
+#            ## how many requests are allowed to be added per second
+#            redis-rate-limiter.replenishRate: 5
+#            ## from RateLimiterConfig
+#            key-resolver: "#{@ipKeyResolver}"
 
       routes:
         ## Client makes request to API Gateway: http://localhost:4004/auth/login
@@ -41,6 +41,11 @@ spring:
           filters:
             - StripPrefix=1
             - JwtValidation
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.burstCapacity: 5
+                redis-rate-limiter.replenishRate: 5
+                key-resolver: "#{@ipKeyResolver}"
 
 
         ## Client calls: http://localhost:4004/api-docs/patients

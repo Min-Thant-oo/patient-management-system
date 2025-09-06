@@ -1,3 +1,231 @@
+POST http://localhost:4004/api/patients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzE0NTQ0NywiZXhwIjoxNzU3MTgxNDQ3fQ.8eiyeYjuvF9ZZWKbVGi7RcDUyF-2BqlOgczZNEJJG_0
+Content-Length: 201
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe with circuit breaker6",
+  "email": "john_billing_circuit_breaker6@example.com",
+  "address": "123 main street22",
+  "dateOfBirth": "1995-09-09",
+  "registeredDate": "2024-11-28"
+}
+
+<> 2025-09-06T031617.200.json
+
+###
+
+POST http://localhost:4004/api/patients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzE0NTQ0NywiZXhwIjoxNzU3MTgxNDQ3fQ.8eiyeYjuvF9ZZWKbVGi7RcDUyF-2BqlOgczZNEJJG_0
+Content-Length: 201
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe with circuit breaker5",
+  "email": "john_billing_circuit_breaker5@example.com",
+  "address": "123 main street22",
+  "dateOfBirth": "1995-09-09",
+  "registeredDate": "2024-11-28"
+}
+
+<> 2025-09-06T030927.200.json
+
+###
+
+POST http://localhost:4004/api/patients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzE0NTQ0NywiZXhwIjoxNzU3MTgxNDQ3fQ.8eiyeYjuvF9ZZWKbVGi7RcDUyF-2BqlOgczZNEJJG_0
+Content-Length: 201
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe with circuit breaker4",
+  "email": "john_billing_circuit_breaker4@example.com",
+  "address": "123 main street22",
+  "dateOfBirth": "1995-09-09",
+  "registeredDate": "2024-11-28"
+}
+
+<> 2025-09-06T030049.200.json
+
+###
+
+POST http://localhost:4004/api/patients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzE0NTQ0NywiZXhwIjoxNzU3MTgxNDQ3fQ.8eiyeYjuvF9ZZWKbVGi7RcDUyF-2BqlOgczZNEJJG_0
+Content-Length: 201
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe with circuit breaker3",
+  "email": "john_billing_circuit_breaker3@example.com",
+  "address": "123 main street22",
+  "dateOfBirth": "1995-09-09",
+  "registeredDate": "2024-11-28"
+}
+
+<> 2025-09-06T025742.200.json
+
+###
+
+POST http://localhost:4004/api/patients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzE0NTQ0NywiZXhwIjoxNzU3MTgxNDQ3fQ.8eiyeYjuvF9ZZWKbVGi7RcDUyF-2BqlOgczZNEJJG_0
+Content-Length: 201
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe with circuit breaker2",
+  "email": "john_billing_circuit_breaker2@example.com",
+  "address": "123 main street22",
+  "dateOfBirth": "1995-09-09",
+  "registeredDate": "2024-11-28"
+}
+
+<> 2025-09-06T025734.400.json
+
+###
+
+POST http://localhost:4004/auth/login
+Content-Type: application/json
+Content-Length: 63
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "testuser@test.com",
+  "password": "password123"
+}
+
+<> 2025-09-06T025727.200.json
+
+###
+
+POST http://localhost:4004/api/patients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzE0MzI4NSwiZXhwIjoxNzU3MTc5Mjg1fQ.nIRToxiRkBILKLm3BxrzCvX2ZmXXbL8XRk6yiny5rZY
+Content-Length: 201
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe with circuit breaker2",
+  "email": "john_billing_circuit_breaker2@example.com",
+  "address": "123 main street22",
+  "dateOfBirth": "1995-09-09",
+  "registeredDate": "2024-11-28"
+}
+
+<> 2025-09-06T022722.200.json
+
+###
+
+POST http://localhost:4004/api/patients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzE0MzI4NSwiZXhwIjoxNzU3MTc5Mjg1fQ.nIRToxiRkBILKLm3BxrzCvX2ZmXXbL8XRk6yiny5rZY
+Content-Length: 201
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe with circuit breaker1",
+  "email": "john_billing_circuit_breaker1@example.com",
+  "address": "123 main street22",
+  "dateOfBirth": "1995-09-09",
+  "registeredDate": "2024-11-28"
+}
+
+<> 2025-09-06T022130.200.json
+
+###
+
+POST http://localhost:4004/auth/login
+Content-Type: application/json
+Content-Length: 63
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "testuser@test.com",
+  "password": "password123"
+}
+
+<> 2025-09-06T022125.200.json
+
+###
+
+POST http://localhost:4004/api/patients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzE0MjI5MywiZXhwIjoxNzU3MTc4MjkzfQ.BHVktA1nMKkkUx0IcRyGhwJeo8LeQJ53qa517148MfE
+Content-Length: 199
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe with circuit breaker",
+  "email": "john_billing_circuit_breaker@example.com",
+  "address": "123 main street22",
+  "dateOfBirth": "1995-09-09",
+  "registeredDate": "2024-11-28"
+}
+
+<> 2025-09-06T020739.200.json
+
+###
+
+POST http://localhost:4004/api/patients
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzE0MjI5MywiZXhwIjoxNzU3MTc4MjkzfQ.BHVktA1nMKkkUx0IcRyGhwJeo8LeQJ53qa517148MfE
+Content-Length: 199
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "name": "John Doe with circuit breaker",
+  "email": "john_billing_circuit breaker@example.com",
+  "address": "123 main street22",
+  "dateOfBirth": "1995-09-09",
+  "registeredDate": "2024-11-28"
+}
+
+<> 2025-09-06T020728.400.json
+
+###
+
+POST http://localhost:4004/auth/login
+Content-Type: application/json
+Content-Length: 63
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "testuser@test.com",
+  "password": "password123"
+}
+
+<> 2025-09-06T020453.200.json
+
+###
+
 POST http://localhost:4004/auth/login
 Content-Type: application/json
 Content-Length: 63
@@ -466,6 +694,3 @@ Accept: */*
 
 <> 2025-08-10T115053.200.json
 
-###
-
-GRPC localhost:9001/BillingService/CreateBillingAccountGRPC localhost:9001/BillingService/CreateBillingAccount

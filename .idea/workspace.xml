@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added billing service dependency &amp; proto file in billing-service">
-      <change afterPath="$PROJECT_DIR$/billing-service/src/main/java/com/minthantoo/billing_service/kafka/KafkaConsumer.java" afterDir="false" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added KafkaConsumer in billing-service &amp; added configs in application.properties">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/31d666f3-734b-4ee1-aaa8-35de7451c173.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/31d666f3-734b-4ee1-aaa8-35de7451c173.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-requests/create-patient.http" beforeDir="false" afterPath="$PROJECT_DIR$/api-requests/create-patient.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/kafka/kafkaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/kafka/kafkaProducer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +63,7 @@
   &quot;isMigrated&quot;: true
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -123,7 +127,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "bigdataide_conn_settings",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -155,8 +159,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PatientIntegrationTest.shouldReturn429AfterLimitExceeded">
-    <configuration name="get-patient | GET request to get all patients" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/get-patient.http" executionIdentifier="GET request to get all patients" runType="Run single request">
+  <component name="RunManager" selected="Docker.kafka">
+    <configuration name="create-patient | Creates a new patient entity" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/create-patient.http" executionIdentifier="Creates a new patient entity" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="login | Login Request to retrieve a token" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/auth-service/login.http" executionIdentifier="Login Request to retrieve a token" runType="Run single request">
@@ -398,6 +402,14 @@
         <settings>
           <option name="imageTag" value="billing-service:latest" />
           <option name="containerName" value="billing-service" />
+          <option name="envVars">
+            <list>
+              <DockerEnvVarImpl>
+                <option name="name" value="SPRING_KAFKA_BOOTSTRAP_SERVERS" />
+                <option name="value" value="kafka:9092" />
+              </DockerEnvVarImpl>
+            </list>
+          </option>
           <option name="portBindings">
             <list>
               <DockerPortBindingImpl>
@@ -599,8 +611,8 @@
       <item itemvalue="Docker.patient-service-db" />
       <item itemvalue="Docker.auth-service-db " />
       <item itemvalue="Docker.auth-service" />
+      <item itemvalue="HTTP Request.create-patient | Creates a new patient entity" />
       <item itemvalue="HTTP Request.login | Login Request to retrieve a token" />
-      <item itemvalue="HTTP Request.get-patient | GET request to get all patients" />
       <item itemvalue="JUnit.PatientIntegrationTest" />
       <item itemvalue="JUnit.PatientIntegrationTest.shouldReturn429AfterLimitExceeded" />
       <item itemvalue="JUnit.PatientIntegrationTest.shouldReturnPatientsWithValidToken" />
@@ -614,11 +626,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.create-patient | Creates a new patient entity" />
+        <item itemvalue="HTTP Request.login | Login Request to retrieve a token" />
         <item itemvalue="JUnit.PatientIntegrationTest.shouldReturn429AfterLimitExceeded" />
         <item itemvalue="JUnit.PatientIntegrationTest" />
         <item itemvalue="JUnit.PatientIntegrationTest.shouldReturnPatientsWithValidToken" />
-        <item itemvalue="HTTP Request.login | Login Request to retrieve a token" />
-        <item itemvalue="HTTP Request.get-patient | GET request to get all patients" />
       </list>
     </recent_temporary>
   </component>
@@ -657,7 +669,7 @@
       <workItem from="1755402375293" duration="20754000" />
       <workItem from="1755826615405" duration="21418000" />
       <workItem from="1756060876853" duration="73460000" />
-      <workItem from="1757037910092" duration="20500000" />
+      <workItem from="1757037910092" duration="27496000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -867,14 +879,21 @@
       <option name="project" value="LOCAL" />
       <updated>1757139064856</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Added KafkaConsumer in billing-service &amp; added configs in application.properties">
+      <option name="closed" value="true" />
+      <created>1757140787912</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1757140787912</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added analytics-service" />
     <MESSAGE value="added api-gateway service" />
     <MESSAGE value="added api-gateway docker file &amp; fixed application.yml" />
     <MESSAGE value="added authservice &amp; its dto" />
@@ -899,7 +918,8 @@
     <MESSAGE value="Added sendBillingAccountEvent method in kafkaProducer" />
     <MESSAGE value="Added patient service circuit breaker fallback config in application.properties" />
     <MESSAGE value="Added billing service dependency &amp; proto file in billing-service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added billing service dependency &amp; proto file in billing-service" />
+    <MESSAGE value="Added KafkaConsumer in billing-service &amp; added configs in application.properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added KafkaConsumer in billing-service &amp; added configs in application.properties" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

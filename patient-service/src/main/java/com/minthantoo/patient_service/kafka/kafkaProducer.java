@@ -45,7 +45,7 @@ public class kafkaProducer {
                 .build();
 
         try {
-            kafkaTemplate.send("billing_account", event.toByteArray());
+            kafkaTemplate.send("billing-account", event.toByteArray());
         }  catch (Exception e) {
             log.error("Error sending BillingAccountCreated event: {}", e.getMessage());
         }

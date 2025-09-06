@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added circuit breaker fallback method">
-      <change afterPath="$PROJECT_DIR$/patient-service/src/main/proto/billing_account_event.proto" afterDir="false" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added sendBillingAccountEvent method in kafkaProducer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/kafka/kafkaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/kafka/kafkaProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient-service/src/main/proto/patient_event.proto" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/proto/patient_event.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -660,7 +658,7 @@
       <workItem from="1755402375293" duration="20754000" />
       <workItem from="1755826615405" duration="21418000" />
       <workItem from="1756060876853" duration="73460000" />
-      <workItem from="1757037910092" duration="14599000" />
+      <workItem from="1757037910092" duration="17962000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -846,7 +844,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757128626865</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Added sendBillingAccountEvent method in kafkaProducer">
+      <option name="closed" value="true" />
+      <created>1757132088542</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1757132088542</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -876,7 +882,8 @@
     <MESSAGE value="Removed default-filters in application.yml in api-gateway &amp; added rate limiting test" />
     <MESSAGE value="Installed circuit breaker and configured createBillingAccount method in BillingServiceGrpcClient" />
     <MESSAGE value="Added circuit breaker fallback method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added circuit breaker fallback method" />
+    <MESSAGE value="Added sendBillingAccountEvent method in kafkaProducer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added sendBillingAccountEvent method in kafkaProducer" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

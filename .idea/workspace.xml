@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Installed circuit breaker and configured createBillingAccount method in BillingServiceGrpcClient">
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added circuit breaker fallback method">
+      <change afterPath="$PROJECT_DIR$/patient-service/src/main/proto/billing_account_event.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/grpc/BillingServiceGrpcClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/grpc/BillingServiceGrpcClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/kafka/kafkaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/kafka/kafkaProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/src/main/proto/patient_event.proto" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/proto/patient_event.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -658,7 +660,7 @@
       <workItem from="1755402375293" duration="20754000" />
       <workItem from="1755826615405" duration="21418000" />
       <workItem from="1756060876853" duration="73460000" />
-      <workItem from="1757037910092" duration="10981000" />
+      <workItem from="1757037910092" duration="14599000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -836,7 +838,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757109193239</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Added circuit breaker fallback method">
+      <option name="closed" value="true" />
+      <created>1757128626865</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1757128626865</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -865,7 +875,8 @@
     <MESSAGE value="Added rate limiting to api gateway" />
     <MESSAGE value="Removed default-filters in application.yml in api-gateway &amp; added rate limiting test" />
     <MESSAGE value="Installed circuit breaker and configured createBillingAccount method in BillingServiceGrpcClient" />
-    <option name="LAST_COMMIT_MESSAGE" value="Installed circuit breaker and configured createBillingAccount method in BillingServiceGrpcClient" />
+    <MESSAGE value="Added circuit breaker fallback method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added circuit breaker fallback method" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

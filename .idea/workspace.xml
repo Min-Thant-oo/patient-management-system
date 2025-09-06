@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Removed default-filters in application.yml in api-gateway &amp; added rate limiting test">
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Installed circuit breaker and configured createBillingAccount method in BillingServiceGrpcClient">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/grpc/BillingServiceGrpcClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/grpc/BillingServiceGrpcClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +60,7 @@
   &quot;isMigrated&quot;: true
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -659,7 +658,7 @@
       <workItem from="1755402375293" duration="20754000" />
       <workItem from="1755826615405" duration="21418000" />
       <workItem from="1756060876853" duration="73460000" />
-      <workItem from="1757037910092" duration="5699000" />
+      <workItem from="1757037910092" duration="10981000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -829,7 +828,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757041485670</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Installed circuit breaker and configured createBillingAccount method in BillingServiceGrpcClient">
+      <option name="closed" value="true" />
+      <created>1757109193239</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1757109193239</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -857,7 +864,8 @@
     <MESSAGE value="Added redis to PatientService &amp; tested" />
     <MESSAGE value="Added rate limiting to api gateway" />
     <MESSAGE value="Removed default-filters in application.yml in api-gateway &amp; added rate limiting test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed default-filters in application.yml in api-gateway &amp; added rate limiting test" />
+    <MESSAGE value="Installed circuit breaker and configured createBillingAccount method in BillingServiceGrpcClient" />
+    <option name="LAST_COMMIT_MESSAGE" value="Installed circuit breaker and configured createBillingAccount method in BillingServiceGrpcClient" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

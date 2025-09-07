@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Debugged &amp; tested circuit breaker until 4 in the morning.">
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added prometheus.yml in monitoring package">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-10T115053.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-16T190950.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-16T201218.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-17T004430.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-18T011257.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-24T144801.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,9 +89,11 @@
     "Docker.auth-service-db .executor": "Run",
     "Docker.auth-service.executor": "Run",
     "Docker.billing-service.executor": "Run",
+    "Docker.grafana.executor": "Run",
     "Docker.kafka.executor": "Run",
     "Docker.patient-service-db.executor": "Run",
     "Docker.patient-service.executor": "Run",
+    "Docker.prometheus.executor": "Run",
     "Docker.redis.executor": "Run",
     "HTTP Request.create-billing-account | #1.executor": "Run",
     "HTTP Request.create-patient | Creates a new patient entity.executor": "Run",
@@ -157,8 +165,11 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.patient-service">
+  <component name="RunManager" selected="Docker.grafana">
     <configuration name="create-patient | Creates a new patient entity" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/create-patient.http" executionIdentifier="Creates a new patient entity" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="get-patient | GET request to get all patients" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/get-patient.http" executionIdentifier="GET request to get all patients" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="login | Login Request to retrieve a token" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/auth-service/login.http" executionIdentifier="Login Request to retrieve a token" runType="Run single request">
@@ -178,16 +189,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PatientIntegrationTest" />
       <option name="METHOD_NAME" value="shouldReturn429AfterLimitExceeded" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PatientIntegrationTest.shouldReturnPatientsWithValidToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="integration-tests" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PatientIntegrationTest" />
-      <option name="METHOD_NAME" value="shouldReturnPatientsWithValidToken" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -426,6 +427,24 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="grafana" type="docker-deploy" factoryName="docker-image" server-name="Docker">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="grafana/grafana:latest" />
+          <option name="containerName" value="grafana" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="3000" />
+                <option name="hostPort" value="3000" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="commandLineOptions" value="--network internal" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="kafka" type="docker-deploy" factoryName="docker-image" server-name="Docker">
       <deployment type="docker-image">
         <settings>
@@ -589,6 +608,32 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="prometheus" type="docker-deploy" factoryName="docker-image" server-name="Docker">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="prom/prometheus:latest" />
+          <option name="containerName" value="prometheus" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="9090" />
+                <option name="hostPort" value="9090" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="commandLineOptions" value="--network internal" />
+          <option name="volumeBindings">
+            <list>
+              <DockerVolumeBindingImpl>
+                <option name="containerPath" value="/etc/prometheus/prometheus.yml" />
+                <option name="hostPath" value="$USER_HOME$/Downloads/patient-management-pro/monitoring/prometheus.yml" />
+              </DockerVolumeBindingImpl>
+            </list>
+          </option>
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="redis" type="docker-deploy" factoryName="docker-image" server-name="Docker">
       <deployment type="docker-image">
         <settings>
@@ -608,6 +653,8 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Docker.grafana" />
+      <item itemvalue="Docker.prometheus" />
       <item itemvalue="Docker.redis" />
       <item itemvalue="Docker.billing-service" />
       <item itemvalue="Docker.patient-service" />
@@ -617,11 +664,11 @@
       <item itemvalue="Docker.patient-service-db" />
       <item itemvalue="Docker.auth-service-db " />
       <item itemvalue="Docker.auth-service" />
+      <item itemvalue="HTTP Request.get-patient | GET request to get all patients" />
       <item itemvalue="HTTP Request.create-patient | Creates a new patient entity" />
       <item itemvalue="HTTP Request.login | Login Request to retrieve a token" />
       <item itemvalue="JUnit.PatientIntegrationTest" />
       <item itemvalue="JUnit.PatientIntegrationTest.shouldReturn429AfterLimitExceeded" />
-      <item itemvalue="JUnit.PatientIntegrationTest.shouldReturnPatientsWithValidToken" />
       <item itemvalue="Spring Boot.AuthServiceApplication" />
       <item itemvalue="Spring Boot.ApiGatewayApplication" />
       <item itemvalue="Spring Boot.AnalyticsServiceApplication" />
@@ -632,11 +679,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.create-patient | Creates a new patient entity" />
+        <item itemvalue="HTTP Request.get-patient | GET request to get all patients" />
         <item itemvalue="HTTP Request.login | Login Request to retrieve a token" />
+        <item itemvalue="HTTP Request.create-patient | Creates a new patient entity" />
         <item itemvalue="JUnit.PatientIntegrationTest.shouldReturn429AfterLimitExceeded" />
         <item itemvalue="JUnit.PatientIntegrationTest" />
-        <item itemvalue="JUnit.PatientIntegrationTest.shouldReturnPatientsWithValidToken" />
       </list>
     </recent_temporary>
   </component>
@@ -675,7 +722,8 @@
       <workItem from="1755402375293" duration="20754000" />
       <workItem from="1755826615405" duration="21418000" />
       <workItem from="1756060876853" duration="73460000" />
-      <workItem from="1757037910092" duration="36603000" />
+      <workItem from="1757037910092" duration="38101000" />
+      <workItem from="1757268864882" duration="5487000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -901,15 +949,29 @@
       <option name="project" value="LOCAL" />
       <updated>1757147672869</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Added spring boot actuator&amp;prometheus deps &amp; configs in application.properties in patient-service">
+      <option name="closed" value="true" />
+      <created>1757265450711</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1757265450711</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Added prometheus.yml in monitoring package">
+      <option name="closed" value="true" />
+      <created>1757265983837</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1757265983838</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added api-gateway docker file &amp; fixed application.yml" />
-    <MESSAGE value="added authservice &amp; its dto" />
     <MESSAGE value="added jwt &amp; token generation &amp; test login endpoint" />
     <MESSAGE value="added validate token test &amp; validate token endpoint" />
     <MESSAGE value="added auth service docs via gateway" />
@@ -933,7 +995,9 @@
     <MESSAGE value="Added billing service dependency &amp; proto file in billing-service" />
     <MESSAGE value="Added KafkaConsumer in billing-service &amp; added configs in application.properties" />
     <MESSAGE value="Debugged &amp; tested circuit breaker until 4 in the morning." />
-    <option name="LAST_COMMIT_MESSAGE" value="Debugged &amp; tested circuit breaker until 4 in the morning." />
+    <MESSAGE value="Added spring boot actuator&amp;prometheus deps &amp; configs in application.properties in patient-service" />
+    <MESSAGE value="Added prometheus.yml in monitoring package" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added prometheus.yml in monitoring package" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

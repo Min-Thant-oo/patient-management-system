@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 5s
+
+#define all the different services & endpoints we want prometheus to scrape the metrics from
+scrape_configs:
+  - job_name: 'patient-service'
+    metrics_path: '/actuator/prometheus'  #define endpoint
+    static_configs:
+      - targets: ['patient-service:4000'] #define service where we want the metrics to scrape from

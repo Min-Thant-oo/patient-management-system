@@ -15,7 +15,7 @@ public class PatientServiceMetrics {
         this.meterRegistry = meterRegistry;
     }
 
-    @Around("execution(* com/minthantoo/patient_service/service/PatientService.getPatients(..)")
+    @Around("execution(* com.minthantoo.patient_service.service.PatientService.getPatients(..))")
     // Run this method before running getPatients method in PatientService.java after checking cache
     // Check cache > aspect method(monitorGetPatients) > getPatients method
     public Object monitorGetPatients(ProceedingJoinPoint joinPoint) throws Throwable {

@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added prometheus.yml in monitoring package">
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added aspects for cache miss in patient-service">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-10T115053.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-16T190950.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-16T201218.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-17T004430.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-18T011257.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-24T144801.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-24T144849.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-24T144954.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-24T192640.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-25T175645.200.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-requests/get-patient.http" beforeDir="false" afterPath="$PROJECT_DIR$/api-requests/get-patient.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/aspects/PatientServiceMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/aspects/PatientServiceMetrics.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +165,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.grafana">
+  <component name="RunManager" selected="Docker.patient-service">
     <configuration name="create-patient | Creates a new patient entity" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/create-patient.http" executionIdentifier="Creates a new patient entity" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -723,7 +723,7 @@
       <workItem from="1755826615405" duration="21418000" />
       <workItem from="1756060876853" duration="73460000" />
       <workItem from="1757037910092" duration="38101000" />
-      <workItem from="1757268864882" duration="5487000" />
+      <workItem from="1757268864882" duration="8064000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -965,14 +965,21 @@
       <option name="project" value="LOCAL" />
       <updated>1757265983838</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Added aspects for cache miss in patient-service">
+      <option name="closed" value="true" />
+      <created>1757284799438</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1757284799438</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added jwt &amp; token generation &amp; test login endpoint" />
     <MESSAGE value="added validate token test &amp; validate token endpoint" />
     <MESSAGE value="added auth service docs via gateway" />
     <MESSAGE value="added login integration test" />
@@ -997,7 +1004,8 @@
     <MESSAGE value="Debugged &amp; tested circuit breaker until 4 in the morning." />
     <MESSAGE value="Added spring boot actuator&amp;prometheus deps &amp; configs in application.properties in patient-service" />
     <MESSAGE value="Added prometheus.yml in monitoring package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added prometheus.yml in monitoring package" />
+    <MESSAGE value="Added aspects for cache miss in patient-service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added aspects for cache miss in patient-service" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

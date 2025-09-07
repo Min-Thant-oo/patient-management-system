@@ -1,3 +1,111 @@
+GET http://localhost:4004/api/patients?sort=desc&size=2&page=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzI4NTY3OCwiZXhwIjoxNzU3MzIxNjc4fQ.4XdE_rit4tzdB2ESlt5wVV4Oa4CLu9pQbuaesAfiOCA
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-09-07T175444.200.json
+
+###
+
+POST http://localhost:4004/auth/login
+Content-Type: application/json
+Content-Length: 63
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "testuser@test.com",
+  "password": "password123"
+}
+
+<> 2025-09-07T175438.200.json
+
+###
+
+GET http://localhost:4004/api/patients?sort=desc&size=2&page=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzI4NTQ5MCwiZXhwIjoxNzU3MzIxNDkwfQ.uxiGe6D8_-tDOB9R1w8U_CFqvqqwWPGSQIJ2xJVK8Vg
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-09-07T175138.200.json
+
+###
+
+POST http://localhost:4004/auth/login
+Content-Type: application/json
+Content-Length: 63
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "testuser@test.com",
+  "password": "password123"
+}
+
+<> 2025-09-07T175130.200.json
+
+###
+
+GET http://localhost:4004/api/patients?sort=desc&size=2&page=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzI4NDg5MCwiZXhwIjoxNzU3MzIwODkwfQ.Wnii3W_TMcKLMwwrD4BMTNKl7Tyr3kt-CA_qFRoeUxQ
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-09-07T174902.200.json
+
+###
+
+GET http://localhost:4004/api/patients?sort=asc&size=2&page=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzI4NDg5MCwiZXhwIjoxNzU3MzIwODkwfQ.Wnii3W_TMcKLMwwrD4BMTNKl7Tyr3kt-CA_qFRoeUxQ
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-09-07T174308.200.json
+
+###
+
+GET http://localhost:4004/api/patients?sort=asc&size=2&page=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzI4NDg5MCwiZXhwIjoxNzU3MzIwODkwfQ.Wnii3W_TMcKLMwwrD4BMTNKl7Tyr3kt-CA_qFRoeUxQ
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-09-07T174306.200.json
+
+###
+
+GET http://localhost:4004/api/patients?sort=asc&size=2&page=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzI4NDg5MCwiZXhwIjoxNzU3MzIwODkwfQ.Wnii3W_TMcKLMwwrD4BMTNKl7Tyr3kt-CA_qFRoeUxQ
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-09-07T174302.200.json
+
+###
+
+POST http://localhost:4004/auth/login
+Content-Type: application/json
+Content-Length: 63
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "email": "testuser@test.com",
+  "password": "password123"
+}
+
+<> 2025-09-07T174130.200.json
+
+###
+
 GET http://localhost:4004/api/patients?sort=asc&size=2&page=1
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NzI2ODkyNSwiZXhwIjoxNzU3MzA0OTI1fQ.IyuTqnbR-7v5axLbt55eROeJxT6h5AyVBHjhgX9PawI
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
@@ -548,120 +656,4 @@ Accept: */*
 }
 
 <> 2025-08-25T185110.200.json
-
-###
-
-GET http://localhost:4004/auth/validate
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NjE2MjYwNSwiZXhwIjoxNzU2MTk4NjA1fQ.F6KXqQuRwZstzvaGMfoyLVU0yt90wZnEVsQnS0o3ovE
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-###
-
-POST http://localhost:4004/auth/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2025-08-25T175645.200.json
-
-###
-
-GET http://localhost:4005/validate
-Authorization: Bearer 12345678765432
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-###
-
-GET http://localhost:4005/validate
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1NjA4MTYwMCwiZXhwIjoxNzU2MTE3NjAwfQ.q8cgy3-URmwFoyP0e1EZ81l_NJ9kZeQFpUJdX9AX9KI
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-###
-
-POST http://localhost:4005/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2025-08-24T192640.200.json
-
-###
-
-POST http://localhost:4005/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2025-08-24T144954.200.json
-
-###
-
-POST http://localhost:4005/login
-Content-Type: application/json
-Content-Length: 63
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password123"
-}
-
-<> 2025-08-24T144849.200.json
-
-###
-
-POST http://localhost:4005/login
-Content-Type: application/json
-Content-Length: 62
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "password12"
-}
-
-###
-
-POST http://localhost:4005/login
-Content-Type: application/json
-Content-Length: 57
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "email": "testuser@test.com",
-  "password": "wrong"
-}
 

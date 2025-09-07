@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added KafkaConsumer in billing-service &amp; added configs in application.properties">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/31d666f3-734b-4ee1-aaa8-35de7451c173.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/31d666f3-734b-4ee1-aaa8-35de7451c173.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Debugged &amp; tested circuit breaker until 4 in the morning.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-requests/create-patient.http" beforeDir="false" afterPath="$PROJECT_DIR$/api-requests/create-patient.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/kafka/kafkaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/kafka/kafkaProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +157,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.kafka">
+  <component name="RunManager" selected="Docker.patient-service">
     <configuration name="create-patient | Creates a new patient entity" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/create-patient.http" executionIdentifier="Creates a new patient entity" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -577,6 +575,14 @@
               </DockerEnvVarImpl>
             </list>
           </option>
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="4000" />
+                <option name="hostPort" value="4000" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
           <option name="commandLineOptions" value="--network internal" />
           <option name="sourceFilePath" value="patient-service/Dockerfile" />
         </settings>
@@ -669,7 +675,7 @@
       <workItem from="1755402375293" duration="20754000" />
       <workItem from="1755826615405" duration="21418000" />
       <workItem from="1756060876853" duration="73460000" />
-      <workItem from="1757037910092" duration="27496000" />
+      <workItem from="1757037910092" duration="36603000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -887,14 +893,21 @@
       <option name="project" value="LOCAL" />
       <updated>1757140787912</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Debugged &amp; tested circuit breaker until 4 in the morning.">
+      <option name="closed" value="true" />
+      <created>1757147672869</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1757147672869</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added api-gateway service" />
     <MESSAGE value="added api-gateway docker file &amp; fixed application.yml" />
     <MESSAGE value="added authservice &amp; its dto" />
     <MESSAGE value="added jwt &amp; token generation &amp; test login endpoint" />
@@ -919,7 +932,8 @@
     <MESSAGE value="Added patient service circuit breaker fallback config in application.properties" />
     <MESSAGE value="Added billing service dependency &amp; proto file in billing-service" />
     <MESSAGE value="Added KafkaConsumer in billing-service &amp; added configs in application.properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added KafkaConsumer in billing-service &amp; added configs in application.properties" />
+    <MESSAGE value="Debugged &amp; tested circuit breaker until 4 in the morning." />
+    <option name="LAST_COMMIT_MESSAGE" value="Debugged &amp; tested circuit breaker until 4 in the morning." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

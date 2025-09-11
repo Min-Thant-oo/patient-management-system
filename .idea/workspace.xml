@@ -4,16 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added aspects for cache miss in patient-service">
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="fixed some bugs &amp; tested cache miss metrics">
+      <change afterPath="$PROJECT_DIR$/appointment-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-24T144849.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-24T144954.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-24T192640.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-25T175645.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-25T185110.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-25T185340.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-25T185425.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-26T184032.500.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-26T184132.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-26T184141.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-26T184901.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-09-02T220232.200.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-requests/get-patient.http" beforeDir="false" afterPath="$PROJECT_DIR$/api-requests/get-patient.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/aspects/PatientServiceMetrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/aspects/PatientServiceMetrics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/cache/RedisCacheConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/cache/RedisCacheConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +94,8 @@
     "Application.PatientServiceApplication.executor": "Run",
     "Docker.analytics-service.executor": "Run",
     "Docker.api-gateway.executor": "Run",
+    "Docker.appointment-service-db.executor": "Run",
+    "Docker.appointment-service.executor": "Run",
     "Docker.auth-service-db .executor": "Run",
     "Docker.auth-service.executor": "Run",
     "Docker.billing-service.executor": "Run",
@@ -124,7 +134,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.BillingServiceApplication.executor": "Run",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/solar/IdeaProjects/patient-management-system/billing-service/src/main/proto",
+    "last_opened_file_path": "/Users/solar/IdeaProjects/patient-management-system/appointment-service",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -145,11 +155,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/appointment-service" />
       <recent name="$PROJECT_DIR$/billing-service/src/main/proto" />
       <recent name="$PROJECT_DIR$/auth-service" />
       <recent name="$PROJECT_DIR$/api-gateway" />
       <recent name="$PROJECT_DIR$/analytics-service" />
-      <recent name="$PROJECT_DIR$/analytics-service/src/main/proto" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/patient-service/src/main" />
@@ -165,7 +175,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.patient-service">
+  <component name="RunManager" selected="Docker.appointment-service-db">
     <configuration name="create-patient | Creates a new patient entity" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/create-patient.http" executionIdentifier="Creates a new patient entity" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -219,6 +229,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AppointmentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="appointment-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.minthantoo.appointmentservice.AppointmentServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="auth-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.minthantoo.authservice.AuthServiceApplication" />
@@ -254,6 +271,14 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="Docker Image" type="docker-deploy" factoryName="docker-image" server-name="Docker">
+      <deployment type="docker-image">
+        <settings>
+          <option name="containerName" value="" />
+        </settings>
+      </deployment>
+      <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-image" temporary="true">
       <deployment type="docker-image">
@@ -311,6 +336,67 @@
           </option>
           <option name="commandLineOptions" value="--network internal" />
           <option name="sourceFilePath" value="api-gateway/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="appointment-service-db" type="docker-deploy" factoryName="docker-image" server-name="Docker">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="postgres:latest" />
+          <option name="containerName" value="appointment-service-db" />
+          <option name="envVars">
+            <list>
+              <DockerEnvVarImpl>
+                <option name="name" value="POSTGRES_DB" />
+                <option name="value" value="db" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="POSTGRES_PASSWORD" />
+                <option name="value" value="password" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="POSTGRES_USER" />
+                <option name="value" value="admin_user" />
+              </DockerEnvVarImpl>
+            </list>
+          </option>
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="5432" />
+                <option name="hostPort" value="5003" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="commandLineOptions" value="--network internal" />
+          <option name="volumeBindings">
+            <list>
+              <DockerVolumeBindingImpl>
+                <option name="containerPath" value="/var/lib/postgresql/data" />
+                <option name="hostPath" value="$USER_HOME$/Documents/db_volumes/appointment-service-db" />
+              </DockerVolumeBindingImpl>
+            </list>
+          </option>
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="appointment-service" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="appointment-service:latest" />
+          <option name="containerName" value="appointment-service" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="4006" />
+                <option name="hostPort" value="4006" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="commandLineOptions" value="--network internal" />
+          <option name="sourceFilePath" value="appointment-service/Dockerfile" />
         </settings>
       </deployment>
       <method v="2" />
@@ -653,6 +739,8 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Docker.Docker Image" />
+      <item itemvalue="Docker.appointment-service" />
       <item itemvalue="Docker.grafana" />
       <item itemvalue="Docker.prometheus" />
       <item itemvalue="Docker.redis" />
@@ -663,12 +751,14 @@
       <item itemvalue="Docker.kafka" />
       <item itemvalue="Docker.patient-service-db" />
       <item itemvalue="Docker.auth-service-db " />
+      <item itemvalue="Docker.appointment-service-db" />
       <item itemvalue="Docker.auth-service" />
       <item itemvalue="HTTP Request.get-patient | GET request to get all patients" />
       <item itemvalue="HTTP Request.create-patient | Creates a new patient entity" />
       <item itemvalue="HTTP Request.login | Login Request to retrieve a token" />
       <item itemvalue="JUnit.PatientIntegrationTest" />
       <item itemvalue="JUnit.PatientIntegrationTest.shouldReturn429AfterLimitExceeded" />
+      <item itemvalue="Spring Boot.AppointmentServiceApplication" />
       <item itemvalue="Spring Boot.AuthServiceApplication" />
       <item itemvalue="Spring Boot.ApiGatewayApplication" />
       <item itemvalue="Spring Boot.AnalyticsServiceApplication" />
@@ -723,7 +813,8 @@
       <workItem from="1755826615405" duration="21418000" />
       <workItem from="1756060876853" duration="73460000" />
       <workItem from="1757037910092" duration="38101000" />
-      <workItem from="1757268864882" duration="8064000" />
+      <workItem from="1757268864882" duration="13311000" />
+      <workItem from="1757379156329" duration="4725000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -973,14 +1064,21 @@
       <option name="project" value="LOCAL" />
       <updated>1757284799438</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="fixed some bugs &amp; tested cache miss metrics">
+      <option name="closed" value="true" />
+      <created>1757285829579</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1757285829579</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added validate token test &amp; validate token endpoint" />
     <MESSAGE value="added auth service docs via gateway" />
     <MESSAGE value="added login integration test" />
     <MESSAGE value="added login integration test unauth test" />
@@ -1005,7 +1103,8 @@
     <MESSAGE value="Added spring boot actuator&amp;prometheus deps &amp; configs in application.properties in patient-service" />
     <MESSAGE value="Added prometheus.yml in monitoring package" />
     <MESSAGE value="Added aspects for cache miss in patient-service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added aspects for cache miss in patient-service" />
+    <MESSAGE value="fixed some bugs &amp; tested cache miss metrics" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some bugs &amp; tested cache miss metrics" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

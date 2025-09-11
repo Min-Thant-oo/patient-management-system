@@ -1,0 +1,22 @@
+{
+  "patients": [
+    {
+      "id": "223e4567-e89b-12d3-a456-426614174012",
+      "name": "Sophia Clark",
+      "email": "sophia.clark@example.com",
+      "address": "123 Hickory St, Shelbyville",
+      "dateOfBirth": "1991-12-25"
+    },
+    {
+      "id": "223e4567-e89b-12d3-a456-426614174006",
+      "name": "Sarah Taylor",
+      "email": "sarah.taylor@example.com",
+      "address": "123 Birch St, Shelbyville",
+      "dateOfBirth": "1992-04-18"
+    }
+  ],
+  "page": 1,
+  "size": 2,
+  "totalPages": 13,
+  "totalElements": 26
+}

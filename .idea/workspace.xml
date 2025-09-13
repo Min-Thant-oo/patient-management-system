@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added CachedPatientRepository IN AppointmentService">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-09-02T221114.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/minthantoo/appointmentservice/service/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/minthantoo/appointmentservice/service/AppointmentService.java" afterDir="false" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Got cached patient details and added it to dto">
+      <change afterPath="$PROJECT_DIR$/appointment-service/src/main/proto/patient_event.proto" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +102,8 @@
     "JUnit.PatientIntegrationTest.shouldReturnPatientsWithValidToken.executor": "Run",
     "Maven.analytics-service [clean].executor": "Run",
     "Maven.analytics-service [compile].executor": "Run",
+    "Maven.appointment-service [clean].executor": "Run",
+    "Maven.appointment-service [compile].executor": "Run",
     "Maven.auth-service [clean].executor": "Run",
     "Maven.auth-service [compile].executor": "Run",
     "Maven.billing-service [clean].executor": "Run",
@@ -121,7 +121,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.BillingServiceApplication.executor": "Run",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/solar/IdeaProjects/patient-management-system/api-requests",
+    "last_opened_file_path": "/Users/solar/IdeaProjects/patient-management-system/appointment-service/src/main/proto",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -142,11 +142,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/appointment-service/src/main/proto" />
       <recent name="$PROJECT_DIR$/api-requests" />
       <recent name="$PROJECT_DIR$/appointment-service/src/main/java/com/minthantoo/appointmentservice/dto" />
       <recent name="$PROJECT_DIR$/appointment-service/src/main/resources" />
       <recent name="$PROJECT_DIR$/appointment-service" />
-      <recent name="$PROJECT_DIR$/billing-service/src/main/proto" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/patient-service/src/main" />
@@ -796,7 +796,7 @@
       <workItem from="1757037910092" duration="38101000" />
       <workItem from="1757268864882" duration="13311000" />
       <workItem from="1757379156329" duration="9423000" />
-      <workItem from="1757778145647" duration="13810000" />
+      <workItem from="1757778145647" duration="14875000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -1134,14 +1134,21 @@
       <option name="project" value="LOCAL" />
       <updated>1757791578174</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Got cached patient details and added it to dto">
+      <option name="closed" value="true" />
+      <created>1757796637253</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1757796637253</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added redis dependencies &amp; cachemanager" />
     <MESSAGE value="Added redis to PatientService &amp; tested" />
     <MESSAGE value="Added rate limiting to api gateway" />
     <MESSAGE value="Removed default-filters in application.yml in api-gateway &amp; added rate limiting test" />
@@ -1166,7 +1173,8 @@
     <MESSAGE value="Added AppointmentController in appointment-service" />
     <MESSAGE value="Added get-appointments-by-date-range.http &amp; updated other http request files" />
     <MESSAGE value="Added CachedPatientRepository IN AppointmentService" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added CachedPatientRepository IN AppointmentService" />
+    <MESSAGE value="Got cached patient details and added it to dto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got cached patient details and added it to dto" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

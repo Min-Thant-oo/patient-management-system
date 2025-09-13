@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added CachedPatient entity">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/minthantoo/appointmentservice/dto/AppointmentRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/appointment-service/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/minthantoo/appointmentservice/entity/CachedPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/minthantoo/appointmentservice/entity/CachedPatient.java" afterDir="false" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added appointment-service dto">
+      <change afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/minthantoo/appointmentservice/exception/GlobalExceptionHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +118,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.BillingServiceApplication.executor": "Run",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/solar/IdeaProjects/patient-management-system/appointment-service/src/main/resources",
+    "last_opened_file_path": "/Users/solar/IdeaProjects/patient-management-system/appointment-service/src/main/java/com/minthantoo/appointmentservice/dto",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -145,11 +139,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/appointment-service/src/main/java/com/minthantoo/appointmentservice/dto" />
       <recent name="$PROJECT_DIR$/appointment-service/src/main/resources" />
       <recent name="$PROJECT_DIR$/appointment-service" />
       <recent name="$PROJECT_DIR$/billing-service/src/main/proto" />
       <recent name="$PROJECT_DIR$/auth-service" />
-      <recent name="$PROJECT_DIR$/api-gateway" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/patient-service/src/main" />
@@ -805,7 +799,7 @@
       <workItem from="1757037910092" duration="38101000" />
       <workItem from="1757268864882" duration="13311000" />
       <workItem from="1757379156329" duration="9423000" />
-      <workItem from="1757778145647" duration="3075000" />
+      <workItem from="1757778145647" duration="5178000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -1087,14 +1081,21 @@
       <option name="project" value="LOCAL" />
       <updated>1757779621031</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Added appointment-service dto">
+      <option name="closed" value="true" />
+      <created>1757781420391</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1757781420391</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added get-patient-integration-test" />
     <MESSAGE value="added get-patient-integration-test_1" />
     <MESSAGE value="added query parameters in PatientController" />
     <MESSAGE value="added PagedPatientResponseDTO" />
@@ -1119,7 +1120,8 @@
     <MESSAGE value="added appointment-service and some configs" />
     <MESSAGE value="Added Appointment entity" />
     <MESSAGE value="Added CachedPatient entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added CachedPatient entity" />
+    <MESSAGE value="Added appointment-service dto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added appointment-service dto" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class KafkaConsumer {
     private static final Logger log = LoggerFactory.getLogger(KafkaConsumer.class);
 
-    @KafkaListener(topics = "billing-account", groupId = "billing-service")
+    @KafkaListener(topics = "billing-account", groupId = "billing-service") // used service name as groupId
     public void consumeEvent(byte[] event) {
         try {
             BillingAccountEvent billingAccountEvent = BillingAccountEvent.parseFrom(event);

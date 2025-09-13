@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added AppointmentController in appointment-service">
-      <change afterPath="$PROJECT_DIR$/api-requests/appointment-service/get-appointments-by-date-range.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-requests/patient-service/create-patient.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-requests/patient-service/get-patients.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-requests/create-patient.http" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-requests/delete-patient.http" beforeDir="false" afterPath="$PROJECT_DIR$/api-requests/patient-service/delete-patient.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-requests/get-patient.http" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-requests/update-patient.http" beforeDir="false" afterPath="$PROJECT_DIR$/api-requests/patient-service/update-patient.http" afterDir="false" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added CachedPatientRepository IN AppointmentService">
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-09-02T221114.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointment-service/src/main/java/com/minthantoo/appointmentservice/service/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/minthantoo/appointmentservice/service/AppointmentService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +35,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
-        <option value="Interface" />
         <option value="Class" />
         <option value="HTTP Request" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -98,6 +93,7 @@
     "Docker.redis.executor": "Run",
     "HTTP Request.create-billing-account | #1.executor": "Run",
     "HTTP Request.create-patient | Creates a new patient entity.executor": "Run",
+    "HTTP Request.get-appointments-by-date-range | #1.executor": "Run",
     "HTTP Request.get-patient | GET request to get all patients.executor": "Run",
     "HTTP Request.login | Login Request to retrieve a token.executor": "Run",
     "HTTP Request.validate | GET request to validate token.executor": "Run",
@@ -170,20 +166,14 @@
     <configuration name="create-patient | Creates a new patient entity" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/create-patient.http" executionIdentifier="Creates a new patient entity" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="get-appointments-by-date-range | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/appointment-service/get-appointments-by-date-range.http" executionIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="get-patient | GET request to get all patients" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/get-patient.http" executionIdentifier="GET request to get all patients" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="login | Login Request to retrieve a token" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/auth-service/login.http" executionIdentifier="Login Request to retrieve a token" runType="Run single request">
       <method v="2" />
-    </configuration>
-    <configuration name="PatientIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="integration-tests" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PatientIntegrationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="PatientIntegrationTest.shouldReturn429AfterLimitExceeded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="integration-tests" />
@@ -744,10 +734,10 @@
       <item itemvalue="Docker.auth-service-db " />
       <item itemvalue="Docker.appointment-service-db" />
       <item itemvalue="Docker.auth-service" />
+      <item itemvalue="HTTP Request.get-appointments-by-date-range | #1" />
       <item itemvalue="HTTP Request.get-patient | GET request to get all patients" />
       <item itemvalue="HTTP Request.create-patient | Creates a new patient entity" />
       <item itemvalue="HTTP Request.login | Login Request to retrieve a token" />
-      <item itemvalue="JUnit.PatientIntegrationTest" />
       <item itemvalue="JUnit.PatientIntegrationTest.shouldReturn429AfterLimitExceeded" />
       <item itemvalue="Spring Boot.AppointmentServiceApplication" />
       <item itemvalue="Spring Boot.AuthServiceApplication" />
@@ -760,11 +750,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.get-appointments-by-date-range | #1" />
         <item itemvalue="HTTP Request.get-patient | GET request to get all patients" />
         <item itemvalue="HTTP Request.login | Login Request to retrieve a token" />
         <item itemvalue="HTTP Request.create-patient | Creates a new patient entity" />
         <item itemvalue="JUnit.PatientIntegrationTest.shouldReturn429AfterLimitExceeded" />
-        <item itemvalue="JUnit.PatientIntegrationTest" />
       </list>
     </recent_temporary>
   </component>
@@ -806,7 +796,7 @@
       <workItem from="1757037910092" duration="38101000" />
       <workItem from="1757268864882" duration="13311000" />
       <workItem from="1757379156329" duration="9423000" />
-      <workItem from="1757778145647" duration="11457000" />
+      <workItem from="1757778145647" duration="13810000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -1128,15 +1118,29 @@
       <option name="project" value="LOCAL" />
       <updated>1757788177054</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Added get-appointments-by-date-range.http &amp; updated other http request files">
+      <option name="closed" value="true" />
+      <created>1757791282365</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1757791282365</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Added CachedPatientRepository IN AppointmentService">
+      <option name="closed" value="true" />
+      <created>1757791578174</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1757791578174</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed pagination zero index" />
-    <MESSAGE value="Added pagination api testing" />
     <MESSAGE value="Added redis dependencies &amp; cachemanager" />
     <MESSAGE value="Added redis to PatientService &amp; tested" />
     <MESSAGE value="Added rate limiting to api gateway" />
@@ -1160,7 +1164,9 @@
     <MESSAGE value="Added AppointmentRepository in appointment-service" />
     <MESSAGE value="Added AppointmentService in appointment-service" />
     <MESSAGE value="Added AppointmentController in appointment-service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added AppointmentController in appointment-service" />
+    <MESSAGE value="Added get-appointments-by-date-range.http &amp; updated other http request files" />
+    <MESSAGE value="Added CachedPatientRepository IN AppointmentService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added CachedPatientRepository IN AppointmentService" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

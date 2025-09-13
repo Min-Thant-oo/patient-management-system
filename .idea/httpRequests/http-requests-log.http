@@ -4,6 +4,16 @@ User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 
+<> 2025-09-13T143704.200.json
+
+###
+
+GET http://localhost:4006/appointments?from=2025-10-20T00:00:00&to=2025-11-20T23:59:59
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
 <> 2025-09-13T141937.200.json
 
 ###
@@ -639,14 +649,4 @@ Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
 
 <> 2025-09-02T221127.200.json
-
-###
-
-GET http://localhost:4004/api/patients?sort=desc&size=2&page=1&searchValue=John
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlckB0ZXN0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc1Njg2ODU1MiwiZXhwIjoxNzU2OTA0NTUyfQ.FAfnyGk6W-u_wKKS-rQJkkG8p1oRjjIXx0s9iYK5ZOM
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.4
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-<> 2025-09-02T221114.200.json
 

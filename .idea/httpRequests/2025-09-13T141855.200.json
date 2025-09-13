@@ -1,0 +1,11 @@
+[
+  {
+    "id": "11111111-1111-1111-1111-111111111111",
+    "patientId": "123e4567-e89b-12d3-a456-426614174000",
+    "patientName": null,
+    "startTime": "2025-10-20T10:00:00",
+    "endTime": "2025-10-20T10:30:00",
+    "reason": "Initial Consultation",
+    "version": 0
+  }
+]

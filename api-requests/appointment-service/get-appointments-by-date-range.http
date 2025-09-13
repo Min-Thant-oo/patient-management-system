@@ -1,0 +1,4 @@
+##yyyy-mm-dd
+## Get the appointments from start of the day to the end of the day
+GET http://localhost:4006/appointments?from=2025-10-20T00:00:00&to=2025-11-20T23:59:59
+Content-Type: application/json

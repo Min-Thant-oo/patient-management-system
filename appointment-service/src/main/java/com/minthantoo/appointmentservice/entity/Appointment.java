@@ -35,7 +35,7 @@ public class Appointment {
 
     @Version
     @Column(nullable = false)
-    private Integer version;
+    private Long version;
 
     public Appointment(UUID patientId, LocalDateTime startTime, LocalDateTime endTime, String reason) {
         this.patientId = patientId;
@@ -87,11 +87,11 @@ public class Appointment {
         this.reason = reason;
     }
 
-    public Integer getVersion() {
+    public Long getVersion() {
         return version;
     }
 
-    public void setVersion(Integer version) {
+    public void setVersion(Long version) {
         this.version = version;
     }
 }

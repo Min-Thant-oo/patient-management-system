@@ -21,16 +21,15 @@ public class kafkaProducer {
 
     // sending patient's info
     // call this method in PatientService.java
-    public void sendEvent(Patient patient) {
+    public void sendPatientCreatedEvent(Patient patient) {
         PatientEvent event = PatientEvent.newBuilder()
                 .setPatientId(patient.getId().toString())
                 .setName(patient.getName())
                 .setEmail(patient.getEmail())
-                .setEventType("PATIENT_CREATED")
                 .build();
 
         try {
-            kafkaTemplate.send("patient", event.toByteArray()); // converted to byte array to keep the size of the event down
+            kafkaTemplate.send("patient.created", event.toByteArray()); // converted to byte array to keep the size of the event down
         } catch (Exception e) {
             log.error("Error sending PatientCreated event: {}", event);
         }

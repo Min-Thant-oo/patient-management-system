@@ -1,16 +1,26 @@
 package com.minthantoo.appointmentservice.kafka;
 
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.minthantoo.appointmentservice.entity.CachedPatient;
+import com.minthantoo.appointmentservice.repository.CachedPatientRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import patient.events.PatientEvent; // comes from generated-sources from maven clean and compile
 
+import java.time.Instant;
+import java.util.UUID;
+
 @Service
 public class KafkaConsumer {
 
     private static final Logger log = LoggerFactory.getLogger(KafkaConsumer.class);
+    private final CachedPatientRepository cachedPatientRepository;
+
+    public KafkaConsumer(CachedPatientRepository cachedPatientRepository) {
+        this.cachedPatientRepository = cachedPatientRepository;
+    }
 
     // two event topics for creating patient and updating patient
     // used service name as groupId
@@ -20,6 +30,14 @@ public class KafkaConsumer {
             PatientEvent patientEvent = PatientEvent.parseFrom(event);
 
             log.info("Received Patient Event {}", patientEvent.toString());
+
+            CachedPatient cachedPatient = new CachedPatient();
+            cachedPatient.setId(UUID.fromString(patientEvent.getPatientId()));
+            cachedPatient.setFullName(patientEvent.getName());
+            cachedPatient.setEmail(patientEvent.getEmail());
+            cachedPatient.setUpdatedAt(Instant.now());
+
+            cachedPatientRepository.save(cachedPatient);
 
         } catch (InvalidProtocolBufferException e) {
             log.error("Error deserializing Patient Event: {}", e.getMessage());

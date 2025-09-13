@@ -14,7 +14,7 @@ public class CachedPatient {
     private UUID id;
     private String fullName; // since these data comes from another microservice, not from a random client request, its sure data is good and no need for extra validation
     private String email;
-    private Instant updatedAt;
+    private Instant updatedAt; // Shows when the cached record was last updated (to detect staleness and refresh when needed)
 
     public UUID getId() {
         return id;

@@ -4,24 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="fixed some bugs &amp; tested cache miss metrics">
-      <change afterPath="$PROJECT_DIR$/appointment-service/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-25T185110.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-25T185340.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-25T185425.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-26T184032.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-26T184132.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-26T184141.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-08-26T184901.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2025-09-02T220232.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added Appointment entity">
+      <change afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/minthantoo/appointmentservice/entity/CachedPatient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-requests/get-patient.http" beforeDir="false" afterPath="$PROJECT_DIR$/api-requests/get-patient.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/cache/RedisCacheConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient-service/src/main/java/com/minthantoo/patient_service/cache/RedisCacheConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,70 +74,70 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.PatientServiceApplication.executor": "Run",
-    "Docker.analytics-service.executor": "Run",
-    "Docker.api-gateway.executor": "Run",
-    "Docker.appointment-service-db.executor": "Run",
-    "Docker.appointment-service.executor": "Run",
-    "Docker.auth-service-db .executor": "Run",
-    "Docker.auth-service.executor": "Run",
-    "Docker.billing-service.executor": "Run",
-    "Docker.grafana.executor": "Run",
-    "Docker.kafka.executor": "Run",
-    "Docker.patient-service-db.executor": "Run",
-    "Docker.patient-service.executor": "Run",
-    "Docker.prometheus.executor": "Run",
-    "Docker.redis.executor": "Run",
-    "HTTP Request.create-billing-account | #1.executor": "Run",
-    "HTTP Request.create-patient | Creates a new patient entity.executor": "Run",
-    "HTTP Request.get-patient | GET request to get all patients.executor": "Run",
-    "HTTP Request.login | Login Request to retrieve a token.executor": "Run",
-    "HTTP Request.validate | GET request to validate token.executor": "Run",
-    "JUnit.All in integration-tests.executor": "Run",
-    "JUnit.AuthIntegrationTest.executor": "Run",
-    "JUnit.PatientIntegrationTest.executor": "Run",
-    "JUnit.PatientIntegrationTest.shouldReturn429AfterLimitExceeded.executor": "Run",
-    "JUnit.PatientIntegrationTest.shouldReturnPatientsWithValidToken.executor": "Run",
-    "Maven.analytics-service [clean].executor": "Run",
-    "Maven.analytics-service [compile].executor": "Run",
-    "Maven.auth-service [clean].executor": "Run",
-    "Maven.auth-service [compile].executor": "Run",
-    "Maven.billing-service [clean].executor": "Run",
-    "Maven.billing-service [compile].executor": "Run",
-    "Maven.patient-service [clean].executor": "Run",
-    "Maven.patient-service [compile].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.BillingServiceApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/solar/IdeaProjects/patient-management-system/appointment-service",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "bigdataide_conn_settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.PatientServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.analytics-service.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.api-gateway.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.appointment-service-db.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.appointment-service.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.auth-service-db .executor&quot;: &quot;Run&quot;,
+    &quot;Docker.auth-service.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.billing-service.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.grafana.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.kafka.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.patient-service-db.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.patient-service.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.prometheus.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.redis.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.create-billing-account | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.create-patient | Creates a new patient entity.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.get-patient | GET request to get all patients.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.login | Login Request to retrieve a token.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.validate | GET request to validate token.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in integration-tests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PatientIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PatientIntegrationTest.shouldReturn429AfterLimitExceeded.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PatientIntegrationTest.shouldReturnPatientsWithValidToken.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.analytics-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.analytics-service [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.auth-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.auth-service [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.billing-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.billing-service [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.patient-service [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.patient-service [compile].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.BillingServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/solar/IdeaProjects/patient-management-system/appointment-service&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;bigdataide_conn_settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "redis",
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;redis&quot;,
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/appointment-service" />
@@ -175,7 +160,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.appointment-service-db">
+  <component name="RunManager" selected="Docker.appointment-service">
     <configuration name="create-patient | Creates a new patient entity" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api-requests/create-patient.http" executionIdentifier="Creates a new patient entity" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -814,7 +799,8 @@
       <workItem from="1756060876853" duration="73460000" />
       <workItem from="1757037910092" duration="38101000" />
       <workItem from="1757268864882" duration="13311000" />
-      <workItem from="1757379156329" duration="4725000" />
+      <workItem from="1757379156329" duration="9423000" />
+      <workItem from="1757778145647" duration="1329000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -1072,15 +1058,29 @@
       <option name="project" value="LOCAL" />
       <updated>1757285829579</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="added appointment-service and some configs">
+      <option name="closed" value="true" />
+      <created>1757552657987</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1757552657987</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Added Appointment entity">
+      <option name="closed" value="true" />
+      <created>1757553165452</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1757553165452</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added auth service docs via gateway" />
-    <MESSAGE value="added login integration test" />
     <MESSAGE value="added login integration test unauth test" />
     <MESSAGE value="added get-patient-integration-test" />
     <MESSAGE value="added get-patient-integration-test_1" />
@@ -1104,7 +1104,9 @@
     <MESSAGE value="Added prometheus.yml in monitoring package" />
     <MESSAGE value="Added aspects for cache miss in patient-service" />
     <MESSAGE value="fixed some bugs &amp; tested cache miss metrics" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed some bugs &amp; tested cache miss metrics" />
+    <MESSAGE value="added appointment-service and some configs" />
+    <MESSAGE value="Added Appointment entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Appointment entity" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

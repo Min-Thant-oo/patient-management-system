@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added appointment-service dto">
-      <change afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/minthantoo/appointmentservice/exception/GlobalExceptionHandler.java" afterDir="false" />
+    <list default="true" id="2f9aa304-1ad9-4b71-9bc0-051f01a3fb7e" name="Changes" comment="Added GlobalExceptionHandler in appointment-service">
+      <change afterPath="$PROJECT_DIR$/appointment-service/src/main/java/com/minthantoo/appointmentservice/repository/AppointmentRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +33,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
-        <option value="Interface" />
         <option value="HTTP Request" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -799,7 +799,7 @@
       <workItem from="1757037910092" duration="38101000" />
       <workItem from="1757268864882" duration="13311000" />
       <workItem from="1757379156329" duration="9423000" />
-      <workItem from="1757778145647" duration="5178000" />
+      <workItem from="1757778145647" duration="5565000" />
     </task>
     <task id="LOCAL-00001" summary="added Grpc&amp;kafka">
       <option name="closed" value="true" />
@@ -1089,14 +1089,21 @@
       <option name="project" value="LOCAL" />
       <updated>1757781420391</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Added GlobalExceptionHandler in appointment-service">
+      <option name="closed" value="true" />
+      <created>1757783465662</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1757783465662</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added get-patient-integration-test_1" />
     <MESSAGE value="added query parameters in PatientController" />
     <MESSAGE value="added PagedPatientResponseDTO" />
     <MESSAGE value="added pagination sorting logic response" />
@@ -1121,7 +1128,8 @@
     <MESSAGE value="Added Appointment entity" />
     <MESSAGE value="Added CachedPatient entity" />
     <MESSAGE value="Added appointment-service dto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added appointment-service dto" />
+    <MESSAGE value="Added GlobalExceptionHandler in appointment-service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added GlobalExceptionHandler in appointment-service" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
